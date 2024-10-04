@@ -97,6 +97,7 @@ public class UserController {
 
         userToUpdate.setEmail(user.getEmail());
         userToUpdate.setUsername(user.getUsername());
+        userToUpdate.setPassword(bCryptPass.encode(user.getPassword()));
 
         try {
             userToUpdate = userService.save(userToUpdate);
